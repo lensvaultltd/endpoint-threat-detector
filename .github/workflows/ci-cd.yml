@@ -1,0 +1,11 @@
+name: EDR CI/CD
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Go Backend
+        run: cd backend && go build ./...
+      - name: Run Python YARA Tests
+        run: cd detection-engine && pip install -r requirements.txt && python -m unittest

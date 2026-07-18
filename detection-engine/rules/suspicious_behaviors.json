@@ -1,0 +1,7 @@
+[
+  {
+    "id": "T1059",
+    "technique": "Command and Scripting Interpreter",
+    "description": "PowerShell execution with EncodedCommand flag"
+  }
+]

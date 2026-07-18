@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: edr-agent
+spec:
+  template:
+    spec:
+      containers:
+      - name: agent
+        image: lensvaultltd/edr-agent:latest
+        securityContext:
+          privileged: true # Required for kernel telemetry
